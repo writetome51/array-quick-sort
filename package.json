@@ -1,0 +1,35 @@
+{
+  "name": "@writetome51/array-quick-sort",
+  "version": "0.0.1",
+  "description": "Very fast function using quick-sort to re-order array, with optional callback allowing you to choose specific value in each array item for comparisons",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/array-quick-sort.git"
+  },
+  "keywords": [
+    "array",
+    "numbers",
+   "objects",
+   "sort",
+  "fast",
+  "quick",
+    "order",
+  "reorder",
+  "function"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/array-quick-sort/issues"
+  },
+  "homepage": "https://github.com/writetome51/array-quick-sort#readme",
+  "devDependencies": {},
+  "dependencies": {
+  }
+}
