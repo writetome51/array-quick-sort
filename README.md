@@ -27,7 +27,7 @@ console.log(objects); // '[{age: 8}, {age: 11}, {age: 12}, {age: 16}]'
 // Sort arrays by length:
 let arrs = [ [1], [1,2,3], [], [1,2], [3,4,5], [0,1] ];
 quickSort(arrs, (arr) => arr.length);
-console.log(arrs); // '[ [], [1], [1,2], [0,1], [1,2,3], [3,4,5] ]'
+console.log(arrs); // '[ [], [1], [0,1], [1,2], [3,4,5], [1,2,3] ]'
 ```
 
 ## Installation
