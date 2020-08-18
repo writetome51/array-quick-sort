@@ -1,7 +1,7 @@
 {
   "name": "@writetome51/array-quick-sort",
   "version": "0.0.1",
-  "description": "Very fast function using quick-sort to re-order array, with optional callback allowing you to choose specific value in each array item for comparisons",
+  "description": "Fast function re-orders array. Optional callback allows you to choose specific value in each element for comparisons",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,13 +15,13 @@
   "keywords": [
     "array",
     "numbers",
-   "objects",
-   "sort",
-  "fast",
-  "quick",
+    "objects",
+    "sort",
+    "fast",
+    "quick",
     "order",
-  "reorder",
-  "function"
+    "reorder",
+    "function"
   ],
   "author": "Steve Thompson",
   "license": "MIT",

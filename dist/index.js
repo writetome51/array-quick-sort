@@ -1,11 +1,13 @@
-//  Extremely fast at numeric ordering (20 million numbers in 5.2 seconds, on 2.3GHz intel core i5).
-//  Not as fast at ordering alphabetically.  Array.prototype.sort() is much faster at that.
-//  Sorts elements by using `<` comparison operator.
-//  `getValue(arr[n])` allows you to choose what exact value in `arr[n]` to use in the comparisons.
-//  By default, it simply returns the passed array element.
-//  Example:  sort an array of objects by the value of property 'age' in each: 
-//  
-//  quickSort(objects, (obj) => obj.age);
+/******************************************************
+//  Extremely fast at numeric ordering (20 million numbers in 5.2 seconds, on 2.3GHz Dual-Core Intel
+//  Core i5). Not as fast at ordering alphabetically (Array.prototype.sort() is much faster).
+//  Optional callback `getValue(element)` allows you to choose what exact value in `element` to use
+//  in the comparisons. It must return the value to use. By default, it simply returns the passed
+//  `element`.
+//  Example:  sort objects by the value of 'age' in each:
+
+    quickSort(objects, (obj) => obj.age);
+ ***************************************************/
 export function quickSort(arr, getValue = (element) => element) {
     __quickSort(arr, 0, arr.length - 1);
     function __quickSort(arr, leftPos, rightPos) {
