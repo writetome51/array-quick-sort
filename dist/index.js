@@ -7,37 +7,48 @@
 //  Example:  sort objects by the value of 'age' in each:
 
     quickSort(objects, (obj) => obj.age);
+
+ [1,1,1]
  ***************************************************/
 export function quickSort(arr, getValue = (element) => element) {
     __quickSort(arr, 0, arr.length - 1);
     function __quickSort(arr, leftPos, rightPos) {
         let initialLeftPos = leftPos, initialRightPos = rightPos, pivot = rightPos, direction = true;
-        while ((leftPos - rightPos) < 0) {
-            if (direction) {
-                if (getValue(arr[pivot]) < getValue(arr[leftPos])) {
-                    tradePlaces(pivot, leftPos);
-                    pivot = leftPos;
-                    --rightPos;
-                    direction = !(direction);
-                }
-                else
-                    ++leftPos;
+        while (true) {
+            if (pivot - 1 > initialLeftPos) {
+                leftPos = initialLeftPos;
+                rightPos = pivot - 1;
             }
-            else {
-                if (getValue(arr[pivot]) <= getValue(arr[rightPos]))
-                    --rightPos;
+            else if (pivot + 1 < initialRightPos) {
+                leftPos = pivot + 1;
+                rightPos = initialRightPos;
+            }
+            else
+                return;
+            pivot = rightPos;
+            while ((leftPos - rightPos) < 0) {
+                if (direction) {
+                    if (getValue(arr[pivot]) < getValue(arr[leftPos])) {
+                        tradePlaces(pivot, leftPos);
+                        pivot = leftPos;
+                        --rightPos;
+                        direction = !(direction);
+                    }
+                    else
+                        ++leftPos;
+                }
                 else {
-                    tradePlaces(pivot, rightPos);
-                    pivot = rightPos;
-                    ++leftPos;
-                    direction = !(direction);
+                    if (getValue(arr[pivot]) <= getValue(arr[rightPos]))
+                        --rightPos;
+                    else {
+                        tradePlaces(pivot, rightPos);
+                        pivot = rightPos;
+                        ++leftPos;
+                        direction = !(direction);
+                    }
                 }
             }
         }
-        if (pivot - 1 > initialLeftPos)
-            __quickSort(arr, initialLeftPos, pivot - 1);
-        if (pivot + 1 < initialRightPos)
-            __quickSort(arr, pivot + 1, initialRightPos);
         function tradePlaces(el1, el2) {
             let element1 = arr[el1];
             arr[el1] = arr[el2];
